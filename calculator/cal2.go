@@ -41,7 +41,7 @@ func main() {
 	default:
 		fmt.Println("잘못 입력하셨습니다.")
 	}
-	if line == "+" {
+	/*if line == "+" {
 		fmt.Printf("%d + %d = %d", n1, n2, n1+n2)
 	} else if line == "-" {
 		fmt.Printf("%d - %d = %d", n1, n2, n1-n2)
@@ -51,5 +51,5 @@ func main() {
 		fmt.Printf("%d / %d = %d", n1, n2, n1/n2)
 	} else {
 		fmt.Println("잘못 입력하셨습니다.")
-	}
+	}*/
 }

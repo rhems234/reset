@@ -1,23 +1,25 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"sort"
+)
 
 func main() {
 	var n int
-	fmt.Scanf("%d", &n)
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Fscanln(reader, &n)
 
-	input := make([]int, n)
-	min := -1000000
-	max := 1000000
-
+	var inputs = make([]int, n)
 	for i := 0; i < n; i++ {
-		fmt.Scanf("%d", &input[i])
-
-		if min < input[i] {
-			min = input[i]
-		} else if max > input[i] {
-			max = input[i]
-		}
+		fmt.Fscan(reader, &inputs[i])
 	}
-	fmt.Println(max, min)
+
+	sort.Slice(inputs, func(i, j int) bool {
+		return inputs[i] < inputs[j]
+	})
+
+	fmt.Printf("%d %d\n", inputs[0], inputs[len(inputs)-1])
 }

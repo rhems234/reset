@@ -15,7 +15,7 @@ func main() {
 	fmt.Println(m["042"], "빈 칸 입니다.")
 	// string형태로 존재하지 않는 KEY값은 ""가 출력된다.
 
-	val, exist := m["02"] // 존재하지 않는 key
+	val, exist := m["02"] // 존재하는 key
 	fmt.Println(val, exist)
 
 	val, exist = m["042"]

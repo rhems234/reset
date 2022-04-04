@@ -2,22 +2,30 @@ package main
 
 import (
 	"bufio"
-	"encoding/ascii85"
 	"fmt"
 	"os"
 	"strconv"
 )
 
 func main() {
-	var a string
+	var s string
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Fscanln(reader, &a)
+	fmt.Fscanln(reader, &s)
 
-	var b = make(map[int]int)
+	var letters = make(map[int]int)
 	for i := 0; i < 26; i++ {
-		b[i+97] = -1
+		letters[i+97] = -1
 	}
-	for i := 0; i < len(a); i++ {
-		ascii, _ := strconv.Atoi(fmt.Sprint())
+
+	for i := 0; i < len(s); i++ {
+		ascii, _ := strconv.Atoi(fmt.Sprintf("%d", s[i]))
+		if letters[ascii] == -1 {
+			letters[ascii] = i
+		}
 	}
+
+	for i := 0; i < 26; i++ {
+		fmt.Printf("%d ", letters[i+97])
+	}
+	fmt.Print("\n")
 }

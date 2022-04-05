@@ -9,8 +9,9 @@ func printSqure(a *int) {
 }
 
 func main() {
-	a := 4
-	printSqure(&a)
+	a := 4 // 지역변수로 선언
+
+	printSqure(&a) // 참조를 위한 a의 주솟값을 매개변수로 전달
 
 	fmt.Println(a)
 }
